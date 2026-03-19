@@ -1,0 +1,31 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Outputs
+outputs/
+
+# Data
+data/
+
+# Model caches
+.cache/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Hydra outputs
+multirun/
+
+# Runtime
+gui.log
+share_url.txt
+.gradio/

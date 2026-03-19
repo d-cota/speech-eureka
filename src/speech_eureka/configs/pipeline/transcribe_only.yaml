@@ -1,0 +1,4 @@
+_target_: speech_eureka.pipeline.SpeechPipeline
+
+steps:
+  - transcription

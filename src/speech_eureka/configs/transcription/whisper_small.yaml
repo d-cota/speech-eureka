@@ -1,0 +1,9 @@
+_target_: speech_eureka.modules.transcription.WhisperTranscriber
+
+model_name: openai/whisper-small
+device: cuda
+batch_size: 32
+language: null
+compute_type: float16
+return_timestamps: true
+chunk_length_s: 30

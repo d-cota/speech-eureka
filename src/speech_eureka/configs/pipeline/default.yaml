@@ -1,0 +1,6 @@
+_target_: speech_eureka.pipeline.SpeechPipeline
+
+steps:
+  - transcription
+  - diarization
+  - speaker_id

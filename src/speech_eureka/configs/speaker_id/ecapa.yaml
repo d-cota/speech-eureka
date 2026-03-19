@@ -1,0 +1,6 @@
+_target_: speech_eureka.modules.speaker_id.EcapaSpeakerIdentifier
+
+model_name: speechbrain/spkrec-ecapa-voxceleb
+device: cuda
+similarity_threshold: 0.65
+enrollment_dir: data/enrollments

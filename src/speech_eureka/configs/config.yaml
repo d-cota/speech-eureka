@@ -1,0 +1,19 @@
+defaults:
+  - transcription: whisper
+  - diarization: pyannote
+  - speaker_id: ecapa
+  - pipeline: default
+  - _self_
+
+audio:
+  paths: []  # list of audio file paths to process
+  sample_rate: 16000
+  mono: true
+
+output:
+  dir: ${hydra:runtime.cwd}/outputs
+  format: json  # json, txt, rttm
+
+hydra:
+  run:
+    dir: ${hydra:runtime.cwd}
