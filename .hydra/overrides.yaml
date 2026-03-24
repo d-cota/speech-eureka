@@ -1,0 +1,4 @@
+- result=outputs/sample.json
+- ref_rttm=ref/sample.rttm
+- ref_transcript=/tmp/sample_ref.txt
+- audio_duration=5.86
