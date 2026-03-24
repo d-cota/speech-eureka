@@ -17,3 +17,7 @@ output:
 hydra:
   run:
     dir: ${hydra:runtime.cwd}
+  job_logging:
+    handlers:
+      file:
+        filename: ${hydra:runtime.cwd}/logs/${hydra:job.name}.log

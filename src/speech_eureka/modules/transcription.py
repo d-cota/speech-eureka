@@ -61,7 +61,10 @@ class WhisperTranscriber(BaseTranscriber):
 
     def transcribe(self, audio_path: str) -> TranscriptionResult:
         logger.info(f"Transcribing: {audio_path}")
-        result = self.pipe(audio_path)
+        from speech_eureka.utils.audio import load_audio
+        waveform, sr = load_audio(audio_path, target_sr=16000)
+        audio_input = {"raw": waveform.squeeze().numpy(), "sampling_rate": sr}
+        result = self.pipe(audio_input)
 
         segments = []
         if "chunks" in result:

@@ -1,0 +1,38 @@
+# Evaluation config for speech-eureka-eval
+# Usage:
+#   speech-eureka-eval result=outputs/sample.json
+#   speech-eureka-eval result=outputs/sample.json ref_rttm=ref/sample.rttm ref_transcript=ref/sample.txt
+
+result: null           # (required) path to pipeline result JSON
+
+# Optional reference files (enable DER/JER and WER/CER respectively)
+ref_rttm: null         # path to reference RTTM for DER/JER
+ref_transcript: null   # path to reference transcript text file for WER/CER
+
+# Speaker context
+teacher_label: null    # speaker_name or speaker_label of the teacher
+audio_duration: null   # audio length in seconds (enables silence_ratio)
+
+# DER/JER settings
+collar: 0.25           # seconds of collar around reference boundaries
+skip_overlap: false    # ignore overlapping speech regions in DER
+
+# WER/CER settings
+strip_fillers: false   # strip uh/um/hmm before scoring
+
+# Classroom metric settings
+gap_tolerance: 0.3     # max gap (s) to merge same-speaker segments into one turn
+transition_window: 5.0 # max gap (s) between turns to count as discourse transition
+
+# Output
+output:
+  dir: ${hydra:runtime.cwd}/outputs/eval
+  format: both         # text, json, both
+
+hydra:
+  run:
+    dir: ${hydra:runtime.cwd}
+  job_logging:
+    handlers:
+      file:
+        filename: ${hydra:runtime.cwd}/logs/${hydra:job.name}.log

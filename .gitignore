@@ -21,11 +21,18 @@ data/
 # IDE
 .vscode/
 .idea/
+.claude/
 
 # Hydra outputs
 multirun/
 
-# Runtime
-gui.log
+# Runtime / logs (keep the directory, ignore contents)
+logs/*
+!logs/.gitkeep
+*.log
 share_url.txt
 .gradio/
+
+# Reference files and scratch
+ref/
+tmp/

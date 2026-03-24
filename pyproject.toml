@@ -14,6 +14,8 @@ dependencies = [
     "omegaconf>=2.3",
     "soundfile",
     "gradio>=4.0",
+    "jiwer>=3.0",
+    "requests",
 ]
 
 [project.optional-dependencies]
@@ -25,6 +27,7 @@ dev = [
 [project.scripts]
 speech-eureka = "speech_eureka.main:main"
 speech-eureka-gui = "speech_eureka.app:main"
+speech-eureka-eval = "speech_eureka.evaluate:main"
 
 [build-system]
 requires = ["hatchling"]
